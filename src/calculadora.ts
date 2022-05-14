@@ -7,7 +7,7 @@ let cont = 0;
 function dibujarLinea() {
   let guion: string = "-";
   for (cont = 0; cont <= 5; cont++) {
-    guion = guion + guion;
+    guion = guion + "-";
   }
   console.log(guion);
 }
