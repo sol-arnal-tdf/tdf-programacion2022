@@ -5,19 +5,20 @@ se indique como parámetro es múltiplo del segundo
 resto es cero
 • Recuerde que la operación mod permite saber si el resto de
 una división es cero*/
-
-let num: number = prompt("ingrese un numero : ");
-let contador: number = 0;
-let multi: string = "los multiplos de " + num + " son :";
-let nomulti: string = "los numeros que no son multiplos son : ";
-
-for (contador = 0; contador <= 100; contador++) {
-  if (contador % num === 0) {
-    multi = multi + " , " + contador;
+function esMultiplo(dividendo: number, divisor: number): boolean {
+  if (dividendo % divisor === 0) {
+    return true;
   } else {
-    nomulti = nomulti + " , " + contador;
+    return false;
   }
 }
 
-console.log(multi);
-console.log(nomulti);
+let numero1: number = Number(prompt("ingrese numero 1 "));
+let numero2: number = Number(prompt("ingrese numero 2 "));
+let multiplo: boolean = esMultiplo(numero1, numero2);
+
+if (multiplo === true) {
+  console.log("es multiplo");
+} else {
+  console.log("no es multiplo");
+}
