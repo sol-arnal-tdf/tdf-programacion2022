@@ -1,0 +1,21 @@
+/* let num : number= new Array(7);
+num[0]=20;
+num[1]=14;
+num[2]=8;
+num[3]=0;
+num[4]=5;
+num[5]=19;
+num[6]=24;
+
+for(let ind:number=0;ind <=6; ind++){
+  console.log(num[ind])
+} */
+
+let cantidad_nom:string = prompt("ingrese cuantos nombres va a ingresar")
+let nombres_usu:string = new Array(cantidad_nom);
+
+function llenar_array_usu(cantidad_nom:number)string{
+  for(let ind:number=0;ind <cantidad_nom; ind++){
+    
+  } 
+}
