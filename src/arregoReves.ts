@@ -28,11 +28,8 @@ function llenar_numeros(): void {
     numeros[ind] = Number(prompt("ingrese un numero :"));
   }
 }
-
-function pos_neg_0(): void {
-  let p: number = 0;
-  let n: number = 0;
-  for (let ind: number = long - 1; ind >= 0; ind--) {
+function can_neg_pos(): void {
+  for (let ind: number = 0; ind < long; ind++) {
     if (numeros[ind] === 0) {
       cero++;
     } else {
@@ -43,13 +40,20 @@ function pos_neg_0(): void {
       }
     }
   }
-  for (let ind: number = long - 1; ind >= 0; ind--) {
+}
+function arreglo_pos_neg(): void {
+  let p: number = 0;
+  let n: number = 0;
+
+  for (let ind: number = 0; ind < long; ind++) {
     if (numeros[ind] > 0) {
       positivo[p] = numeros[ind];
       p++;
     } else {
-      negativo[n] = numeros[ind];
-      n++;
+      if (numeros[ind] < 0) {
+        negativo[n] = numeros[ind];
+        n++;
+      }
     }
   }
 }
@@ -62,7 +66,7 @@ function mostrar_resultados(): void {
     console.log(positivo[ind]);
   }
   console.log("los numeros negativos dentro del arreglo son: ");
-  for (let ind: number = 0; ind < pos; ind++) {
+  for (let ind: number = 0; ind < neg; ind++) {
     console.log(negativo[ind]);
   }
 }
@@ -77,5 +81,6 @@ let numeros: number[] = new Array(long);
 let positivo: number[] = new Array(pos);
 let negativo: number[] = new Array(neg);
 llenar_numeros();
-pos_neg_0();
+can_neg_pos();
+arreglo_pos_neg();
 mostrar_resultados();
