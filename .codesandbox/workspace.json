@@ -25,14 +25,14 @@
         },
         {
           "id": "codesandbox.browser"
+        },
+        {
+          "id": "codesandbox.console"
         }
       ]
     },
     {
       "views": [
-        {
-          "id": "codesandbox.console"
-        },
         {
           "id": "codesandbox.problems"
         }
