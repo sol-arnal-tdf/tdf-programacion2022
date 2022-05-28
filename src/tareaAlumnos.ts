@@ -13,8 +13,19 @@ function ingresar_datos(): void {
   }
 }
 
-function prom_Anual(ind: number): void {
-  let resultado: number = 0;
+function buscar_alum(nombre_buscado: string): void {
+  let resultado: number = -1;
+  for (let ind: number = 0; ind < cantidad; ind++) {
+    if (nAlumnos[ind] === nombre_buscado) {
+      mostrar_datos(ind, resultado);
+    }
+  }
+  if (resultado === -1) {
+    console.log("no se encontro alumno");
+  }
+}
+
+function mostrar_datos(ind: number, resultado: number): void {
   resultado = (nota1[ind] + nota2[ind] + nota3[ind]) / 3;
   console.log("El promedio del alumno : ", nAlumnos[ind]);
   console.log("es de : ", resultado);
@@ -30,21 +41,13 @@ function prom_Anual(ind: number): void {
   );
 }
 
-function buscar_alumno(nombre_buscado: string): void {
-  for (let indi: number = 0; indi < cantidad; indi++) {
-    if (nAlumnos[indi] === nombre_buscado) {
-      return indi;
-    }
-  }
-  return;
-}
 let cantidad: number = Number(
   prompt("ingrese la cantidad de alumnos a procesar : ")
 );
 let nAlumnos: string = new Array(cantidad);
-let nota1: number = new Array(cantidad);
-let nota2: number = new Array(cantidad);
-let nota3: number = new Array(cantidad);
+let nota1: number[] = new Array(cantidad);
+let nota2: number[] = new Array(cantidad);
+let nota3: number[] = new Array(cantidad);
 ingresar_datos();
 let nombre_buscado: string = prompt(
   "Ingrese el nombre del alumno a buscar  : "
