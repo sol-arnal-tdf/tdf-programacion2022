@@ -64,9 +64,9 @@ let cantProd: number = Number(
 );
 
 let producto: string = new Array(cantProd);
-let precio: number = new Array(cantProd);
-let cantidad: number = new Array(cantProd);
-let precFinProd: number = new Array(cantProd);
+let precio: number[] = new Array(cantProd);
+let cantidad: number[] = new Array(cantProd);
+let precFinProd: number[] = new Array(cantProd);
 
 cargaprod(cantProd);
 mostrarListado();
